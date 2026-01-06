@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Amor Não É Óbvio - Uma Leitura Comentada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Homemade+Apple&family=Special+Elite&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --laranja-forte: #FF5500;
+            --laranja-rasgado: #FF6A1A;
+            --laranja-colado: #FF8C42;
+            --laranja-manchado: #FFA66B;
+            --papel-velho: #F5E9D4;
+            --papel-amarelo: #E8D6B5;
+            --papel-rasgado: #D9C8A9;
+            --papel-colado: #C4B598;
+            --fita: #FF3366;
+            --cola: #FFE5CC;
+            --sombra-cola: rgba(255, 133, 51, 0.3);
+            --caneta-azul: #0066CC;
+            --caneta-preta: #2C2C2C;
+            --caneta-vermelha: #CC3300;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: var(--papel-velho);
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4c4a8' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                linear-gradient(to bottom, rgba(212, 196, 168, 0.4), rgba(245, 233, 212, 0.1) 600px);
+            color: var(--caneta-preta);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Efeitos de colagem por todo o site */
+        .cola-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 133, 51, 0.05) 10px, rgba(255, 133, 51, 0.05) 20px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255, 230, 204, 0.05) 10px, rgba(255, 230, 204, 0.05) 20px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Manchas de cola fixas */
+        .mancha-cola {
+            position: fixed;
+            background: var(--cola);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .mancha-cola-1 {
+            top: 10%;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+        }
+
+        .mancha-cola-2 {
+            bottom: 15%;
+            right: 8%;
+            width: 250px;
+            height: 250px;
+        }
+
+        .mancha-cola-3 {
+            top: 40%;
+            right: 15%;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Pedaços de papel rasgado fixos */
+        .pedaco-papel {
+            position: fixed;
+            background: var(--papel-colado);
+            border: 2px solid var(--laranja-manchado);
+            opacity: 0.3;
+            transform: rotate(var(--rotation));
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .pedaco-papel::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 6px);
+            opacity: 0.1;
+        }
+
+        /* Elementos de colagem flutuantes */
+        .colagem-elemento {
+            position: fixed;
+            font-size: 3rem;
+            opacity: 0.15;
+            z-index: -1;
+            animation: colagem-flutuar 20s infinite linear;
+            pointer-events: none;
+            filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.3));
+        }
+
+        @keyframes colagem-flutuar {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(50px, 70px) rotate(10deg) scale(1.1); }
+            50% { transform: translate(0, 140px) rotate(0deg) scale(1); }
+            75% { transform: translate(-50px, 70px) rotate(-10deg) scale(0.9); }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        }
+
+        #root {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+
+        /* Navegação estilo colagem */
+        .navegacao {
+            background: var(--papel-amarelo);
+            padding: 30px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: visible;
+            box-shadow: 
+                10px 10px 0 rgba(0,0,0,0.1),
+                inset 0 0 30px rgba(255, 133, 51, 0.2);
+            border: 3px solid var(--caneta-preta);
+            transform: rotate(-0.7deg);
+        }
+
+        /* Efeito de fita na navegação */
+        .navegacao::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(2deg);
+            width: 200px;
+            height: 30px;
+            background: var(--fita);
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+            z-index: 2;
+        }
+
+        .navegacao::after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 20px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(255,255,255,0.3) 5px, rgba(255,255,255,0.3) 10px);
+            z-index: 3;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding: 20px;
+            background: var(--papel-velho);
+            border: 2px dashed var(--laranja-forte);
+            transform: rotate(0.8deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+        }
+
+        .logo-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+            color: var(--laranja-forte);
+            transform: rotate(-2deg);
+            animation: colagem-pulsar 3s infinite alternate;
+        }
+
+        @keyframes colagem-pulsar {
+            0% { transform: rotate(-2deg) scale(1); }
+            100% { transform: rotate(-2deg) scale(1.1); }
+        }
+
+        .logo h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-weight: 700;
+            font-size: 3.5rem;
+            color: var(--caneta-preta);
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0 rgba(255, 85, 0, 0.3);
+            transform: rotate(1deg);
+            position: relative;
+        }
+
+        .logo h1::before {
+            content: "✄";
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            color: var(--fita);
+            font-size: 2rem;
+        }
+
+        .logo h1::after {
+            content: "✄";
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+            color: var(--fita);
+            font-size: 2rem;
+        }
+
+        .subtitulo {
+            font-style: italic;
+            color: var(--caneta-vermelha);
+            font-size: 1.3rem;
+            font-family: 'Homemade Apple', cursive;
+            background: var(--papel-colado);
+            padding: 8px 20px;
+            display: inline-block;
+            border: 1px solid var(--laranja-rasgado);
+            transform: rotate(-1deg);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-item {
+            background: var(--papel-velho);
+            border: 3px solid var(--caneta-preta);
+            padding: 15px 25px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.2rem;
+            color: var(--caneta-preta);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(var(--rotation, 0deg));
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Cada botão com rotação diferente */
+        .menu-item:nth-child(1) { --rotation: -2deg; }
+        .menu-item:nth-child(2) { --rotation: 1deg; }
+        .menu-item:nth-child(3) { --rotation: -1deg; }
+        .menu-item:nth-child(4) { --rotation: 2deg; }
+        .menu-item:nth-child(5) { --rotation: -0.5deg; }
+        .menu-item:nth-child(6) { --rotation: 1.5deg; }
+        .menu-item:nth-child(7) { --rotation: -1deg; }
+
+        .menu-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 133, 51, 0.2), transparent);
+            transition: 0.6s;
+        }
+
+        .menu-item:hover::before {
+            left: 100%;
+        }
+
+        .menu-item:hover {
+            transform: rotate(var(--rotation, 0deg)) scale(1.1) translateY(-5px);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.3);
+            background: var(--papel-amarelo);
+            z-index: 10;
+        }
+
+        .menu-item.active {
+            background: var(--laranja-colado);
+            color: white;
+            border-color: var(--caneta-vermelha);
+            box-shadow: 8px 8px 0 rgba(204, 51, 0, 0.3);
+            position: relative;
+        }
+
+        .menu-item.active::after {
+            content: "📍";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            color: var(--fita);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        .menu-icon {
+            font-size: 1.3rem;
+            transform: rotate(10deg);
+        }
+
+        /* Conteúdo principal - estilo colagem */
+        .content {
+            background: var(--papel-amarelo);
+            min-height: 60vh;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--caneta-preta);
+            box-shadow: 
+                15px 15px 0 rgba(0,0,0,0.15),
+                inset 0 0 40px rgba(255, 133, 51, 0.1);
+            transform: rotate(0.3deg);
+        }
+
+        /* Efeito de papel colado nas bordas */
+        .content::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: repeating-linear-gradient(45deg, 
+                transparent, 
+                transparent 20px, 
+                var(--cola) 20px, 
+                var(--cola) 40px);
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .pagina {
+            padding: 50px;
+            animation: colagem-aparecer 0.8s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes colagem-aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px) rotate(2deg) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+        }
+
+        /* Página Início - estilo colagem */
+        .inicio {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Papel principal da frase */
+        .frase-principal {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: var(--papel-velho);
+            border: 5px solid var(--laranja-forte);
+            box-shadow: 
+                10px 10px 0 rgba(0,0,0,0.2),
+                20px 20px 0 rgba(255, 133, 51, 0.1);
+            transform: rotate(-1deg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de rasgo no papel */
+        .frase-principal::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(90deg, transparent 10%, var(--papel-rasgado) 50%, transparent 90%);
+            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+        }
+
+        .frase-principal::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(90deg, transparent 10%, var(--papel-rasgado) 50%, transparent 90%);
+            clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+        }
+
+        .frase-principal h2 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--caneta-preta);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 0 rgba(255, 85, 0, 0.3);
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+
+        /* Palavras destacadas como recortes */
+        .frase-principal h2 span {
+            background: var(--laranja-colado);
+            color: white;
+            padding: 5px 15px;
+            margin: 0 5px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .frase-principal h2 span::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px dashed white;
+            opacity: 0.3;
+        }
+
+        .frase-principal .subtitulo {
+            font-style: italic;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+            color: var(--caneta-vermelha);
+            font-family: 'Homemade Apple', cursive;
+            background: transparent;
+            border: 2px dotted var(--laranja-rasgado);
+            padding: 15px 30px;
+            transform: rotate(1deg);
+            position: relative;
+        }
+
+        .frase-principal .subtitulo::before {
+            content: "✂";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+        }
+
+        .frase-principal .subtitulo::after {
+            content: "✂";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+        }
+
+        /* Texto poético como anotações coladas */
+        .texto-poetico {
+            max-width: 800px;
+            margin: 60px auto;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            background: var(--papel-colado);
+            padding: 40px;
+            position: relative;
+            border: 3px solid var(--caneta-preta);
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+            transform: rotate(0.8deg);
+        }
+
+        /* Cantos dobrados */
+        .texto-poetico::before,
+        .texto-poetico::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, transparent 50%, var(--papel-rasgado) 50%);
+        }
+
+        .texto-poetico::before {
+            top: 0;
+            left: 0;
+        }
+
+        .texto-poetico::after {
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(-45deg, transparent 50%, var(--papel-rasgado) 50%);
+        }
+
+        /* Furos de furador */
+        .texto-poetico::before {
+            box-shadow: inset 5px 5px 5px rgba(0,0,0,0.1);
+        }
+
+        .texto-poetico p {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        /* Linhas de margem */
+        .texto-poetico p::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 10px,
+                var(--laranja-rasgado) 10px,
+                var(--laranja-rasgado) 12px
+            );
+        }
+
+        .texto-poetico em {
+            font-style: italic;
+            color: var(--laranja-forte);
+            font-weight: 700;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+            background: rgba(255, 133, 51, 0.1);
+            padding: 2px 8px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+
+        .texto-poetico em::after {
+            content: "★";
+            position: absolute;
+            right: -15px;
+            top: -10px;
+            color: var(--fita);
+            font-size: 0.8rem;
+        }
+
+        .marcador-livro {
+            margin-top: 80px;
+            padding: 30px;
+            position: relative;
+            background: var(--papel-velho);
+            border: 2px solid var(--laranja-forte);
+            transform: rotate(-1deg);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Fita marcadora */
+        .fita {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%) rotate(3deg);
+            width: 80px;
+            height: 40px;
+            background: var(--fita);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+            z-index: 2;
+        }
+
+        .fita::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: repeating-linear-gradient(90deg, 
+                transparent, 
+                transparent 3px, 
+                rgba(255,255,255,0.3) 3px, 
+                rgba(255,255,255,0.3) 6px);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* Página Leitura - estilo caderno colado */
+        .leitura {
+            position: relative;
+        }
+
+        .papel-diario {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            background: var(--papel-velho);
+            border: 5px solid var(--caneta-preta);
+            box-shadow: 15px 15px 0 rgba(0,0,0,0.2);
+            transform: rotate(0.5deg);
+            overflow: hidden;
+        }
+
+        /* Anéis de caderno */
+        .margem-papel {
+            width: 70px;
+            border-right: 3px solid var(--caneta-preta);
+            position: relative;
+            background: var(--papel-amarelo);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .margem-papel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 35px 50px, var(--cola) 3px, transparent 4px),
+                radial-gradient(circle at 35px 100px, var(--cola) 3px, transparent 4px),
+                radial-gradient(circle at 35px 150px, var(--cola) 3px, transparent 4px),
+                radial-gradient(circle at 35px 200px, var(--cola) 3px, transparent 4px),
+                radial-gradient(circle at 35px 250px, var(--cola) 3px, transparent 4px);
+            opacity: 0.3;
+        }
+
+        .conteudo-papel {
+            flex: 1;
+            padding: 40px;
+            position: relative;
+            background: 
+                linear-gradient(90deg, transparent 99%, rgba(255, 85, 0, 0.1) 100%),
+                linear-gradient(180deg, transparent 99%, rgba(255, 85, 0, 0.05) 100%);
+            background-size: 40px 40px, 100% 100%;
+        }
+
+        .data {
+            font-family: 'Homemade Apple', cursive;
+            color: var(--caneta-azul);
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+            padding-left: 35px;
+            transform: rotate(-1deg);
+        }
+
+        .data::before {
+            content: "📅";
+            position: absolute;
+            left: 0;
+            top: -5px;
+            transform: rotate(15deg);
+        }
+
+        .resenha p {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* Sublinhados como marca-texto */
+        .resenha p:nth-child(odd)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--laranja-manchado), transparent);
+            opacity: 0.3;
+        }
+
+        .citacoes-container {
+            margin-top: 60px;
+            position: relative;
+            padding: 30px;
+            background: var(--papel-colado);
+            border: 2px dashed var(--laranja-rasgado);
+            transform: rotate(-0.5deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+        }
+
+        .citacoes-container::before {
+            content: "ANOTAÇÕES DE MARGEM";
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.3rem;
+            color: var(--caneta-vermelha);
+            background: var(--papel-velho);
+            padding: 5px 15px;
+            border: 2px solid var(--caneta-preta);
+            transform: rotate(-2deg);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+        }
+
+        .citacoes-container h3 {
+            font-family: 'Homemade Apple', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--caneta-preta);
+            border-bottom: 3px double var(--laranja-forte);
+            padding-bottom: 15px;
+            text-align: center;
+            transform: rotate(0.5deg);
+        }
+
+        .citacao-card {
+            background: var(--papel-velho);
+            border-left: 8px solid var(--laranja-forte);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(var(--card-rotation, 0deg));
+        }
+
+        /* Cada citação com rotação diferente */
+        .citacao-card:nth-child(odd) { --card-rotation: -0.5deg; }
+        .citacao-card:nth-child(even) { --card-rotation: 0.5deg; }
+
+        .citacao-card:hover {
+            transform: rotate(var(--card-rotation, 0deg)) scale(1.02) translateX(10px);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        /* Nota adesiva */
+        .marcador-pagina {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: var(--fita);
+            color: white;
+            padding: 8px 15px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1rem;
+            border: 2px solid white;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            transform: rotate(-10deg);
+            z-index: 3;
+        }
+
+        .marcador-pagina::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            border-left: 10px solid var(--fita);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        .trecho-livro {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--caneta-preta);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 30px;
+            font-weight: 600;
+        }
+
+        .trecho-livro::before {
+            content: "❝";
+            position: absolute;
+            left: 0;
+            top: -10px;
+            color: var(--laranja-forte);
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .comentario-pessoal {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 2px;
+            border: 2px solid var(--caneta-azul);
+            position: relative;
+            margin-top: 20px;
+            transform: rotate(0.5deg);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .comentario-pessoal::before {
+            content: "✐";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: var(--caneta-azul);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Páginas Marcadas - estilo scrapbook */
+        .marcadas h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 3rem;
+            color: var(--caneta-preta);
+            text-shadow: 3px 3px 0 rgba(255, 85, 0, 0.3);
+            position: relative;
+            padding: 20px;
+            transform: rotate(-1deg);
+        }
+
+        .marcadas h2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: var(--fita);
+            box-shadow: 0 3px 10px rgba(255, 51, 102, 0.3);
+        }
+
+        .subtitulo-pagina {
+            text-align: center;
+            color: var(--caneta-vermelha);
+            margin-bottom: 60px;
+            font-style: italic;
+            font-size: 1.4rem;
+            font-family: 'Homemade Apple', cursive;
+            background: var(--papel-colado);
+            padding: 15px 30px;
+            border: 2px solid var(--laranja-rasgado);
+            display: inline-block;
+            transform: rotate(1deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+        }
+
+        .momentos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .momento-card {
+            padding: 35px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: visible;
+            background: var(--papel-velho);
+            border: 4px solid var(--caneta-preta);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.15);
+            transform: rotate(var(--card-rotation, 0deg));
+        }
+
+        .momento-card:nth-child(1) { --card-rotation: -2deg; border-color: var(--laranja-forte); }
+        .momento-card:nth-child(2) { --card-rotation: 1deg; border-color: var(--caneta-azul); }
+        .momento-card:nth-child(3) { --card-rotation: -1deg; border-color: var(--fita); }
+        .momento-card:nth-child(4) { --card-rotation: 2deg; border-color: var(--caneta-vermelha); }
+        .momento-card:nth-child(5) { --card-rotation: -0.5deg; border-color: var(--laranja-rasgado); }
+
+        /* Cantos com fita adesiva */
+        .momento-card::before,
+        .momento-card::after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--fita);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .momento-card::before {
+            top: -10px;
+            left: -10px;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+
+        .momento-card::after {
+            bottom: -10px;
+            right: -10px;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        }
+
+        .momento-card:hover {
+            transform: rotate(var(--card-rotation, 0deg)) scale(1.05) translateY(-10px);
+            box-shadow: 20px 20px 0 rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .momento-card.aberto {
+            grid-column: 1 / -1;
+            background: var(--papel-amarelo);
+            z-index: 20;
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .momento-cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 3;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed var(--laranja-rasgado);
+        }
+
+        .marcador-livro-pequeno {
+            font-size: 2.5rem;
+            color: var(--laranja-forte);
+            background: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+            transform: rotate(-10deg);
+        }
+
+        .pagina-info {
+            font-size: 1.1rem;
+            color: var(--caneta-azul);
+            font-family: 'Architects Daughter', cursive;
+            background: rgba(255,255,255,0.8);
+            padding: 5px 15px;
+            border-radius: 3px;
+            border: 1px solid var(--caneta-azul);
+            transform: rotate(2deg);
+        }
+
+        .momento-conteudo {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .trecho-container {
+            flex: 1;
+            position: relative;
+            padding: 25px;
+            background: var(--papel-colado);
+            border: 2px solid var(--laranja-rasgado);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+            transform: rotate(-1deg);
+        }
+
+        /* Recorte de jornal */
+        .trecho-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: repeating-linear-gradient(45deg, 
+                transparent, 
+                transparent 5px, 
+                rgba(0,0,0,0.05) 5px, 
+                rgba(0,0,0,0.05) 10px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .aspas {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--laranja-forte);
+            line-height: 1;
+            margin-bottom: -40px;
+            opacity: 0.3;
+            transform: rotate(-5deg);
+        }
+
+        .trecho {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: var(--caneta-preta);
+            line-height: 1.7;
+            position: relative;
+            font-weight: 600;
+            text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+        }
+
+        .separador {
+            width: 5px;
+            background: repeating-linear-gradient(
+                to bottom,
+                var(--laranja-forte),
+                var(--laranja-forte) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            align-self: stretch;
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .separador::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -5px;
+            right: -5px;
+            bottom: -10px;
+            background: var(--cola);
+            opacity: 0.3;
+            border-radius: 5px;
+            z-index: -1;
+        }
+
+        .comentario-container {
+            flex: 1;
+            padding: 25px;
+            background: var(--papel-velho);
+            border: 2px solid var(--caneta-azul);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+            transform: rotate(1deg);
+            position: relative;
+        }
+
+        /* Post-it amarelo */
+        .comentario-container::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, transparent 95%, var(--laranja-manchado) 95%);
+            z-index: -1;
+        }
+
+        .comentario {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--caneta-preta);
+            position: relative;
+        }
+
+        .comentario::before {
+            content: "💭";
+            position: absolute;
+            left: -25px;
+            top: 0;
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        /* O Que Isso Me Lembrou - colagem de pensamentos */
+        .lembrancas h2 {
+            text-align: center;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: var(--caneta-preta);
+            text-shadow: 3px 3px 0 rgba(255, 85, 0, 0.3);
+            padding: 20px;
+            position: relative;
+            transform: rotate(1deg);
+        }
+
+        .lembrancas h2::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: repeating-linear-gradient(90deg, 
+                transparent, 
+                transparent 5px, 
+                var(--fita) 5px, 
+                var(--fita) 10px);
+        }
+
+        .reflexoes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .reflexao-card {
+            background: var(--papel-colado);
+            padding: 35px;
+            position: relative;
+            transition: transform 0.4s ease;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.15);
+            border: 3px solid var(--caneta-preta);
+            transform: rotate(var(--card-rotation, 0deg));
+            overflow: hidden;
+        }
+
+        .reflexao-card:nth-child(1) { --card-rotation: -1deg; }
+        .reflexao-card:nth-child(2) { --card-rotation: 1deg; }
+        .reflexao-card:nth-child(3) { --card-rotation: -0.5deg; }
+        .reflexao-card:nth-child(4) { --card-rotation: 0.5deg; }
+
+        /* Papel amassado */
+        .reflexao-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0,0,0,0.05) 2%, transparent 3%),
+                radial-gradient(circle at 80% 70%, rgba(0,0,0,0.05) 2%, transparent 3%),
+                radial-gradient(circle at 40% 50%, rgba(0,0,0,0.05) 3%, transparent 4%);
+            pointer-events: none;
+        }
+
+        .reflexao-card:hover {
+            transform: rotate(var(--card-rotation, 0deg)) scale(1.05) rotate(1deg);
+            box-shadow: 15px 15px 0 rgba(0,0,0,0.2);
+            z-index: 5;
+        }
+
+        .reflexao-card h3 {
+            color: var(--caneta-preta);
+            margin-bottom: 20px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--laranja-rasgado);
+            position: relative;
+        }
+
+        .reflexao-card h3::before {
+            content: "📌";
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+        }
+
+        .decoracao-superior, .decoracao-inferior {
+            height: 2px;
+            background: repeating-linear-gradient(90deg, 
+                var(--laranja-forte), 
+                var(--laranja-forte) 10px, 
+                transparent 10px, 
+                transparent 20px);
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .decoracao-superior::before,
+        .decoracao-inferior::before {
+            content: "✄";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+            background: var(--papel-colado);
+            padding: 0 10px;
+        }
+
+        .decoracao-superior::before { left: calc(50% - 15px); }
+        .decoracao-inferior::before { right: calc(50% - 15px); }
+
+        .nota-final {
+            max-width: 800px;
+            margin: 80px auto;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.9;
+            color: var(--caneta-preta);
+            font-style: italic;
+            background: var(--papel-velho);
+            padding: 50px;
+            border: 5px double var(--laranja-forte);
+            position: relative;
+            box-shadow: 15px 15px 0 rgba(0,0,0,0.2);
+            transform: rotate(-0.5deg);
+        }
+
+        /* Envelope de carta rasgado */
+        .nota-final::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px dashed var(--laranja-manchado);
+            pointer-events: none;
+        }
+
+        /* Detalhes - colagem de fragmentos */
+        .detalhes h2 {
+            text-align: center;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: var(--caneta-preta);
+            text-shadow: 3px 3px 0 rgba(255, 85, 0, 0.3);
+            padding: 20px;
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .detalhes h2::before {
+            content: "✂";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            color: var(--fita);
+            font-size: 2rem;
+        }
+
+        .detalhes h2::after {
+            content: "✂";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+            color: var(--fita);
+            font-size: 2rem;
+        }
+
+        .pensamentos-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: var(--papel-colado);
+            padding: 40px;
+            border: 4px solid var(--caneta-preta);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.15);
+            transform: rotate(0.5deg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Linhas de caderno */
+        .pensamentos-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 60px;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 24px,
+                rgba(0,0,0,0.05) 24px,
+                rgba(0,0,0,0.05) 25px
+            );
+            pointer-events: none;
+        }
+
+        .pensamento {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.7);
+            border-left: 5px solid var(--laranja-forte);
+            transform: rotate(0.5deg);
+        }
+
+        .pensamento:hover {
+            transform: rotate(0.5deg) translateX(10px);
+            background: rgba(255,255,255,0.9);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+        }
+
+        .pensamento:last-child {
+            border-bottom: none;
+        }
+
+        .marcador {
+            color: var(--laranja-forte);
+            font-size: 2.5rem;
+            margin-top: -5px;
+            flex-shrink: 0;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+            transform: rotate(-10deg);
+        }
+
+        .poemas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin: 80px auto;
+            max-width: 900px;
+        }
+
+        .poema-card {
+            background: var(--papel-velho);
+            padding: 40px;
+            border: 3px solid var(--caneta-preta);
+            position: relative;
+            overflow: visible;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.15);
+            transform: rotate(var(--card-rotation, 0deg));
+        }
+
+        .poema-card:nth-child(1) { --card-rotation: -1deg; }
+        .poema-card:nth-child(2) { --card-rotation: 1deg; }
+
+        /* Furos de grampo */
+        .poema-card::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 80%;
+            background: 
+                radial-gradient(circle at 50% 20%, var(--caneta-preta) 3px, transparent 4px),
+                radial-gradient(circle at 50% 50%, var(--caneta-preta) 3px, transparent 4px),
+                radial-gradient(circle at 50% 80%, var(--caneta-preta) 3px, transparent 4px);
+            opacity: 0.3;
+        }
+
+        .poema-card::after {
+            content: "📜";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 3rem;
+            opacity: 0.2;
+            color: var(--laranja-forte);
+            transform: rotate(15deg);
+        }
+
+        .poema-card h4 {
+            font-family: 'Architects Daughter', cursive;
+            color: var(--caneta-preta);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            background: var(--laranja-colado);
+            color: white;
+            padding: 10px 20px;
+            display: inline-block;
+            border: 2px solid white;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+        }
+
+        .poema-texto {
+            white-space: pre-line;
+            line-height: 2;
+            font-style: italic;
+            color: var(--caneta-preta);
+            font-size: 1.3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .observacao-final {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 1.4rem;
+            color: var(--caneta-preta);
+            font-style: italic;
+            background: var(--papel-amarelo);
+            padding: 40px;
+            border: 3px dashed var(--laranja-rasgado);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+            transform: rotate(0.5deg);
+            position: relative;
+        }
+
+        /* Para Você - envelope rasgado */
+        .voce {
+            text-align: center;
+            position: relative;
+        }
+
+        .envelope {
+            position: relative;
+            width: 400px;
+            height: 280px;
+            margin: 0 auto 80px;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+            transform: rotate(-1deg);
+        }
+
+        .flap {
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 400px;
+            height: 250px;
+            background: linear-gradient(135deg, 
+                var(--laranja-forte), 
+                var(--laranja-rasgado), 
+                var(--fita));
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            border: 5px solid var(--caneta-preta);
+            z-index: 2;
+            opacity: 0.9;
+            box-shadow: 0 15px 30px rgba(255, 85, 0, 0.5);
+        }
+
+        /* Textura de envelope */
+        .flap::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(45deg, 
+                    transparent, 
+                    transparent 20px, 
+                    rgba(255,255,255,0.1) 20px, 
+                    rgba(255,255,255,0.1) 40px);
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+
+        .letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 280px;
+            background: var(--papel-velho);
+            border: 5px solid var(--caneta-preta);
+            z-index: 1;
+            padding: 60px 50px;
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.4),
+                inset 0 0 40px rgba(255, 133, 51, 0.2);
+            overflow: hidden;
+        }
+
+        /* Linhas de carta */
+        .letter::before {
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            right: 50px;
+            bottom: 60px;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 24px,
+                rgba(0,0,0,0.05) 24px,
+                rgba(0,0,0,0.05) 25px
+            );
+            pointer-events: none;
+        }
+
+        .letter-content h2 {
+            color: var(--caneta-preta);
+            margin-bottom: 50px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 30px;
+            transform: rotate(1deg);
+        }
+
+        .letter-content h2::before,
+        .letter-content h2::after {
+            content: "❤";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+            font-size: 2rem;
+        }
+
+        .letter-content h2::before { left: 0; }
+        .letter-content h2::after { right: 0; }
+
+        .dedicatoria p {
+            margin-bottom: 30px;
+            line-height: 2;
+            color: var(--caneta-preta);
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        /* Sublinhado ondulado */
+        .dedicatoria p:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: -5px;
+            height: 2px;
+            background: 
+                repeating-linear-gradient(
+                    to right,
+                    transparent,
+                    transparent 5px,
+                    var(--laranja-manchado) 5px,
+                    var(--laranja-manchado) 10px
+                );
+        }
+
+        .assinatura {
+            margin-top: 60px;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        .linha-assinatura {
+            width: 250px;
+            height: 3px;
+            background: 
+                repeating-linear-gradient(
+                    to right,
+                    var(--caneta-preta),
+                    var(--caneta-preta) 10px,
+                    transparent 10px,
+                    transparent 20px
+                );
+            margin: 15px auto;
+            position: relative;
+        }
+
+        .linha-assinatura::before {
+            content: "✍";
+            position: absolute;
+            left: calc(50% - 10px);
+            top: -25px;
+            color: var(--fita);
+            font-size: 2rem;
+            transform: rotate(-15deg);
+        }
+
+        .ultima-linha {
+            margin-top: 60px;
+            font-size: 1.8rem;
+            color: var(--laranja-forte);
+            font-style: italic;
+            font-weight: 700;
+            background: var(--papel-colado);
+            padding: 30px;
+            border: 3px solid var(--laranja-forte);
+            display: inline-block;
+            transform: rotate(-1deg);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Selo postal */
+        .ultima-linha::before {
+            content: "✉";
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            font-size: 3rem;
+            color: var(--fita);
+            transform: rotate(15deg);
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Página Edição Especial */
+        .edicao-especial h2 {
+            text-align: center;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            color: var(--caneta-preta);
+            text-shadow: 3px 3px 0 rgba(255, 85, 0, 0.3);
+            padding: 20px;
+            position: relative;
+            transform: rotate(-1deg);
+            background: var(--papel-velho);
+            border: 5px solid var(--laranja-forte);
+            display: inline-block;
+            padding: 20px 50px;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+        }
+
+        .edicao-especial h2::before,
+        .edicao-especial h2::after {
+            content: "★";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--fita);
+            font-size: 2.5rem;
+        }
+
+        .edicao-especial h2::before { left: -15px; }
+        .edicao-especial h2::after { right: -15px; }
+
+        .container-edicao {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .papel-foto {
+            background: var(--papel-velho);
+            padding: 40px;
+            border: 8px solid var(--caneta-preta);
+            box-shadow: 
+                15px 15px 0 rgba(0,0,0,0.2),
+                inset 0 0 50px rgba(255, 133, 51, 0.1);
+            transform: rotate(1deg);
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        /* Cantos com fita adesiva no papel da foto */
+        .papel-foto::before,
+        .papel-foto::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--fita);
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .papel-foto::before {
+            top: -15px;
+            left: -15px;
+            clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+
+        .papel-foto::after {
+            bottom: -15px;
+            right: -15px;
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Moldura para a imagem */
+        .moldura-imagem {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border: 5px solid var(--laranja-rasgado);
+            box-shadow: 
+                inset 0 0 30px rgba(0,0,0,0.1),
+                0 0 0 10px var(--papel-colado);
+            margin-bottom: 30px;
+            transform: rotate(-0.5deg);
+        }
+
+        /* Efeito de foto polaroid */
+        .imagem-container {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--caneta-preta);
+            background: #f0f0f0;
+            padding: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .imagem-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(45deg, #e0e0e0, #f5f5f5, #e0e0e0);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .texto-imagem {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border: 2px solid var(--laranja-forte);
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+            max-width: 80%;
+            margin-top: 20px;
+        }
+
+        .legenda-foto {
+            background: var(--papel-velho);
+            padding: 15px;
+            margin-top: 20px;
+            border-top: 3px dashed var(--laranja-manchado);
+            font-style: italic;
+            color: var(--caneta-preta);
+            transform: rotate(0.5deg);
+        }
+
+        .conteudo-edicao {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .elemento-edicao {
+            background: var(--papel-colado);
+            padding: 30px;
+            border: 3px solid var(--caneta-preta);
+            transform: rotate(var(--rotation, 0deg));
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .elemento-edicao:nth-child(1) { --rotation: -1deg; }
+        .elemento-edicao:nth-child(2) { --rotation: 1deg; }
+        .elemento-edicao:nth-child(3) { --rotation: -0.5deg; }
+
+        .elemento-edicao::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: repeating-linear-gradient(45deg, 
+                transparent, 
+                transparent 10px, 
+                rgba(255, 133, 51, 0.05) 10px, 
+                rgba(255, 133, 51, 0.05) 20px);
+            z-index: -1;
+        }
+
+        .elemento-edicao h3 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.8rem;
+            color: var(--laranja-forte);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--laranja-rasgado);
+        }
+
+        .selo-especial {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--fita);
+            color: white;
+            padding: 15px;
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.3);
+            transform: rotate(15deg);
+            z-index: 3;
+        }
+
+        /* Rodapé estilo scrapbook */
+        .rodape {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--caneta-preta);
+            background: var(--papel-velho);
+            border-top: 5px double var(--laranja-forte);
+            border-bottom: 5px double var(--laranja-forte);
+            margin-top: 40px;
+            position: relative;
+            transform: rotate(0.3deg);
+            box-shadow: 0 -10px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* Bordas decoradas */
+        .rodape::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: 
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 20px, 
+                    var(--fita) 20px, 
+                    var(--fita) 40px);
+            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
+        }
+
+        .rodape::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: 
+                repeating-linear-gradient(90deg, 
+                    transparent, 
+                    transparent 20px, 
+                    var(--laranja-forte) 20px, 
+                    var(--laranja-forte) 40px);
+            clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+        }
+
+        .marcadores {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+        }
+
+        .marcadores span {
+            font-size: 3rem;
+            opacity: 0.9;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            transform: rotate(var(--rotation, 0deg));
+            display: inline-block;
+            animation: colagem-bounce 3s infinite alternate;
+            cursor: pointer;
+        }
+
+        .marcadores span:nth-child(1) { --rotation: -5deg; color: var(--laranja-forte); animation-delay: 0s; }
+        .marcadores span:nth-child(2) { --rotation: 3deg; color: var(--fita); animation-delay: 0.2s; }
+        .marcadores span:nth-child(3) { --rotation: -2deg; color: var(--caneta-azul); animation-delay: 0.4s; }
+        .marcadores span:nth-child(4) { --rotation: 4deg; color: var(--caneta-vermelha); animation-delay: 0.6s; }
+        .marcadores span:nth-child(5) { --rotation: -3deg; color: var(--laranja-rasgado); animation-delay: 0.8s; }
+
+        @keyframes colagem-bounce {
+            0% { transform: rotate(var(--rotation, 0deg)) translateY(0); }
+            100% { transform: rotate(var(--rotation, 0deg)) translateY(-20px); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .momento-conteudo {
+                flex-direction: column;
+            }
+            
+            .separador {
+                width: 100%;
+                height: 5px;
+                margin: 30px 0;
+            }
+            
+            .envelope {
+                width: 350px;
+                height: 250px;
+            }
+
+            .imagem-placeholder {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .pagina {
+                padding: 30px;
+            }
+            
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .frase-principal h2 {
+                font-size: 2.5rem;
+            }
+            
+            .logo h1 {
+                font-size: 2.5rem;
+            }
+            
+            .envelope {
+                width: 300px;
+                height: 220px;
+            }
+            
+            .letter {
+                padding: 40px 30px;
+            }
+            
+            .momento-card {
+                padding: 25px;
+            }
+            
+            .marcadores {
+                gap: 15px;
+            }
+            
+            .marcadores span {
+                font-size: 2.5rem;
+            }
+
+            .imagem-placeholder {
+                height: 300px;
+                padding: 20px;
+            }
+
+            .edicao-especial h2 {
+                font-size: 2.5rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-item {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .texto-poetico {
+                padding: 25px;
+            }
+            
+            .frase-principal h2 {
+                font-size: 2rem;
+            }
+            
+            .logo-icon {
+                font-size: 3rem;
+            }
+            
+            .envelope {
+                width: 280px;
+                height: 200px;
+            }
+            
+            .letter {
+                padding: 30px 20px;
+            }
+            
+            .marcadores span {
+                font-size: 2rem;
+            }
+            
+            .citacao-card,
+            .reflexao-card,
+            .poema-card {
+                padding: 25px;
+            }
+
+            .imagem-placeholder {
+                height: 250px;
+                padding: 15px;
+            }
+
+            .elemento-edicao {
+                padding: 20px;
+            }
+        }
+
+        /* Efeitos de interação */
+        .colagem-click {
+            animation: colagem-click 0.5s ease;
+        }
+
+        @keyframes colagem-click {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Efeitos de colagem de fundo -->
+    <div class="cola-effect"></div>
+    <div class="mancha-cola mancha-cola-1"></div>
+    <div class="mancha-cola mancha-cola-2"></div>
+    <div class="mancha-cola mancha-cola-3"></div>
+    
+    <!-- Pedaços de papel rasgado fixos -->
+    <div class="pedaco-papel" style="--rotation: -15deg; top: 15%; left: 5%; width: 200px; height: 150px;"></div>
+    <div class="pedaco-papel" style="--rotation: 10deg; top: 30%; right: 8%; width: 180px; height: 120px;"></div>
+    <div class="pedaco-papel" style="--rotation: 5deg; bottom: 25%; left: 10%; width: 160px; height: 140px;"></div>
+    <div class="pedaco-papel" style="--rotation: -8deg; bottom: 15%; right: 12%; width: 220px; height: 130px;"></div>
+    
+    <!-- Elementos de colagem flutuantes -->
+    <div class="colagem-elemento" style="top:12%; left:8%; font-size: 4rem; color: var(--laranja-forte); animation-delay: 0s;">👽</div>
+    <div class="colagem-elemento" style="top:25%; right:10%; font-size: 3.5rem; color: var(--fita); animation-delay: -3s;">🔭</div>
+    <div class="colagem-elemento" style="bottom:30%; left:15%; font-size: 5rem; color: var(--laranja-rasgado); animation-delay: -6s;">🍊</div>
+    <div class="colagem-elemento" style="bottom:20%; right:15%; font-size: 4rem; color: var(--caneta-azul); animation-delay: -9s;">📘</div>
+    <div class="colagem-elemento" style="top:45%; left:20%; font-size: 3rem; color: var(--caneta-vermelha); animation-delay: -12s;">✂</div>
+    <div class="colagem-elemento" style="top:60%; right:25%; font-size: 3rem; color: var(--laranja-forte); animation-delay: -15s;">📍</div>
+    
+    <!-- Textos recortados flutuantes -->
+    <div class="colagem-elemento" style="top:65%; right:20%; font-family: 'Architects Daughter', cursive; font-size: 2.5rem; color: var(--laranja-forte); animation-delay: -5s; opacity: 0.2; text-shadow: 3px 3px 0 rgba(0,0,0,0.3);">NÃO É ÓBVIO</div>
+    <div class="colagem-elemento" style="top:35%; left:25%; font-family: 'Architects Daughter', cursive; font-size: 2.2rem; color: var(--caneta-vermelha); animation-delay: -8s; opacity: 0.2; text-shadow: 3px 3px 0 rgba(0,0,0,0.3);">LARANJA FORTE</div>
+    <div class="colagem-elemento" style="bottom:45%; right:30%; font-family: 'Homemade Apple', cursive; font-size: 1.8rem; color: var(--fita); animation-delay: -11s; opacity: 0.2; text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">São Patrique</div>
+    <div class="colagem-elemento" style="top:15%; right:30%; font-family: 'Space Mono', monospace; font-size: 1.5rem; color: var(--caneta-azul); animation-delay: -14s; opacity: 0.2; text-shadow: 2px 2px 0 rgba(0,0,0,0.3);">OUER CHA?</div>
+    
+    <div id="root">
+        <!-- Navegação -->
+        <nav class="navegacao">
+            <div class="logo">
+                <span class="logo-icon">📘</span>
+                <h1>O AMOR NÃO É ÓBVIO</h1>
+                <p class="subtitulo">uma colagem de leitura • São Patrique • Laranja Forte</p>
+            </div>
+            <div class="menu">
+                <button class="menu-item active" onclick="mudarPagina('inicio')">
+                    <span class="menu-icon">🏠</span>
+                    <span class="menu-label">Início</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('leitura')">
+                    <span class="menu-icon">📖</span>
+                    <span class="menu-label">A Leitura</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('marcadas')">
+                    <span class="menu-icon">🔖</span>
+                    <span class="menu-label">Páginas Marcadas</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('lembrancas')">
+                    <span class="menu-icon">💭</span>
+                    <span class="menu-label">O Que Isso Me Lembrou</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('detalhes')">
+                    <span class="menu-icon">✨</span>
+                    <span class="menu-label">Detalhes</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('edicao-especial')">
+                    <span class="menu-icon">🖼️</span>
+                    <span class="menu-label">Edição Especial</span>
+                </button>
+                <button class="menu-item" onclick="mudarPagina('voce')">
+                    <span class="menu-icon">💌</span>
+                    <span class="menu-label">Para Você</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <div class="content">
+            <!-- Página Início -->
+            <div id="inicio" class="pagina inicio">
+                <div class="frase-principal">
+                    <h2><span>Agora</span> <span>você</span> <span>está</span> <span>em</span> <span>cada</span> <span>página</span></h2>
+                    <p class="subtitulo">Uma leitura que virou outra coisa</p>
+                </div>
+                
+                <div class="texto-poetico">
+                    <p>
+                        Comecei estas páginas pensando que era sobre um livro.<br />
+                        Terminei descobrindo que era sobre <em>como</em> eu lia —<br />
+                        e sobre quem estava do outro lado, recomendando.
+                    </p>
+                    <p>
+                        Este espaço não é uma resenha.<br />
+                        É um mapa de afetos,<br />
+                        um diário de encontros entre linhas impressas<br />
+                        e memórias que acordaram.
+                    </p>
+                    <p style="text-align: center; margin-top: 40px; font-size: 1.6rem;">
+                        <span style="background: var(--laranja-colado); color: white; padding: 10px 20px; display: inline-block; transform: rotate(-2deg); box-shadow: 5px 5px 0 rgba(0,0,0,0.2);">
+                            "A Gente é nada e o amor é tudo. TUDO. Menos óbvio."
+                        </span>
+                    </p>
+                </div>
+
+                <div class="marcador-livro">
+                    <div class="fita"></div>
+                    <p style="font-family: 'Architects Daughter', cursive; letter-spacing: 2px; font-size: 1.3rem; color: var(--caneta-preta); text-align: center;">
+                        VIRAR PÁGINA • LARANJA FORTE • SÃO PATRIQUE • 👽 • 🔭 • 🍊
+                    </p>
+                    <p style="margin-top: 20px; font-style: italic; color: var(--laranja-forte); font-weight: 700; text-align: center; font-size: 1.4rem;">
+                        <span style="background: rgba(255, 255, 255, 0.9); padding: 10px 20px; display: inline-block; transform: rotate(1deg); border: 2px dotted var(--laranja-rasgado);">
+                            "Por dentro eu me sinto laranja ultraforte."
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Página Leitura -->
+            <div id="leitura" class="pagina leitura" style="display: none;">
+                <div class="papel-diario">
+                    <div class="margem-papel"></div>
+                    <div class="conteudo-papel">
+                        <h2 style="font-family: 'Architects Daughter', cursive; color: var(--caneta-preta); margin-bottom: 20px; font-size: 3rem; text-align: center; transform: rotate(-1deg);">
+                            <span style="background: var(--laranja-forte); color: white; padding: 10px 30px; display: inline-block; border: 3px solid white; box-shadow: 8px 8px 0 rgba(0,0,0,0.2);">
+                                A LEITURA
+                            </span>
+                        </h2>
+                        <p class="data">Iniciada em um dia qualquer que se tornou especial</p>
+                        
+                        <div class="resenha">
+                            <p>
+                                Eu não estava preparado para este livro. Achei que seria mais um na pilha, 
+                                uma recomendação gentil que eu agradeceria e arquivaria. Mas algo aconteceu 
+                                na página 23 — uma frase, uma pausa, um espaço entre palavras que ecoou 
+                                dentro de mim como <em style="color: var(--laranja-forte); background: rgba(255, 133, 51, 0.1); padding: 2px 8px; border-radius: 2px;">laranja ultraforte</em>.
+                            </p>
+                            <p>
+                                Comecei a ler com os olhos, continuei com o coração, terminei com as mãos 
+                                tremendo levemente. Não era mais sobre a história contada, mas sobre a história 
+                                que ela acionou em mim.
+                            </p>
+                            <p>
+                                Cada capítulo era uma conversa indireta com quem me indicou. Eu lia e pensava: 
+                                "É por isso que você quis que eu lesse isso." E então: "Você está aqui, nestas 
+                                linhas, nestas entrelinhas."
+                            </p>
+                        </div>
+
+                        <div class="citacoes-container">
+                            <h3>Anotações nas margens</h3>
+                            <div class="citacao-card">
+                                <div class="marcador-pagina">p. 45</div>
+                                <blockquote class="trecho-livro">"O amor não é óbvio. Ele é descoberta."</blockquote>
+                                <div class="comentario-pessoal">
+                                    <span class="caneta-icon">✎</span>
+                                    <p>Parei aqui. Respirei fundo. Pensei em todas as vezes que algo estava diante de mim e eu não vi.</p>
+                                </div>
+                            </div>
+                            <div class="citacao-card">
+                                <div class="marcador-pagina">p. 89</div>
+                                <blockquote class="trecho-livro">"Às vezes a gente precisa de binóculos para enxergar o que está do lado."</blockquote>
+                                <div class="comentario-pessoal">
+                                    <span class="caneta-icon">✎</span>
+                                    <p>Essa metáfora me pegou. Quantas pessoas próximas deixamos de ver realmente?</p>
+                                </div>
+                            </div>
+                            <div class="citacao-card">
+                                <div class="marcador-pagina">p. 112</div>
+                                <blockquote class="trecho-livro">"Laranja forte não é cor para paredes, é cor para sentimentos."</blockquote>
+                                <div class="comentario-pessoal">
+                                    <span class="caneta-icon">✎</span>
+                                    <p>Risquei: 'É como você quando fala sobre música.'</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Páginas Marcadas -->
+            <div id="marcadas" class="pagina marcadas" style="display: none;">
+                <h2>PÁGINAS MARCADAS</h2>
+                <p class="subtitulo-pagina">Momentos em que o livro e a vida se encontraram</p>
+                
+                <div class="momentos-container">
+                    <div class="momento-card" onclick="toggleMomento(1)">
+                        <div class="momento-cabecalho">
+                            <span class="marcador-livro-pequeno">👁️</span>
+                            <div>
+                                <h3>A PRIMEIRA PAUSA</h3>
+                                <p class="pagina-info">página 23</p>
+                            </div>
+                        </div>
+                        <div class="momento-conteudo">
+                            <div class="trecho-container">
+                                <div class="aspas">"</div>
+                                <p class="trecho">Quando entendi que não era sobre ver, mas sobre permitir ser visto.</p>
+                            </div>
+                            <div class="separador"></div>
+                            <div class="comentario-container">
+                                <p class="comentario">Aqui eu parei. Fiquei olhando para a parede, lembrando daquele café em que você disse algo parecido.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="momento-card" onclick="toggleMomento(2)">
+                        <div class="momento-cabecalho">
+                            <span class="marcador-livro-pequeno">👽</span>
+                            <div>
+                                <h3>O ALIENÍGENA</h3>
+                                <p class="pagina-info">página 67</p>
+                            </div>
+                        </div>
+                        <div class="momento-conteudo">
+                            <div class="trecho-container">
+                                <div class="aspas">"</div>
+                                <p class="trecho">O alienígena que não sabia amar, mas sabia fazer café.</p>
+                            </div>
+                            <div class="separador"></div>
+                            <div class="comentario-container">
+                                <p class="comentario">Mandei essa parte para você. Você respondeu: 'Somos todos aliens aprendendo.'</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="momento-card" onclick="toggleMomento(3)">
+                        <div class="momento-cabecalho">
+                            <span class="marcador-livro-pequeno">🍊</span>
+                            <div>
+                                <h3>O LARANJA</h3>
+                                <p class="pagina-info">página 112</p>
+                            </div>
+                        </div>
+                        <div class="momento-conteudo">
+                            <div class="trecho-container">
+                                <div class="aspas">"</div>
+                                <p class="trecho">Laranja forte é a cor da coragem disfarçada de fruta.</p>
+                            </div>
+                            <div class="separador"></div>
+                            <div class="comentario-container">
+                                <p class="comentario">Pintei uma folha de laranja depois disso. Coloquei na parede do quarto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="momento-card" onclick="toggleMomento(4)">
+                        <div class="momento-cabecalho">
+                            <span class="marcador-livro-pequeno">🔭</span>
+                            <div>
+                                <h3>OS BINÓCULOS</h3>
+                                <p class="pagina-info">página 156</p>
+                            </div>
+                        </div>
+                        <div class="momento-conteudo">
+                            <div class="trecho-container">
+                                <div class="aspas">"</div>
+                                <p class="trecho">Às vezes o amor está tão perto que precisa de lente para ser focado.</p>
+                            </div>
+                            <div class="separador"></div>
+                            <div class="comentario-container">
+                                <p class="comentario">Pensei em todas as vezes que você estava ali e eu estava procurando em outro lugar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="momento-card" onclick="toggleMomento(5)">
+                        <div class="momento-cabecalho">
+                            <span class="marcador-livro-pequeno">💫</span>
+                            <div>
+                                <h3>A ÚLTIMA LINHA</h3>
+                                <p class="pagina-info">página 203</p>
+                            </div>
+                        </div>
+                        <div class="momento-conteudo">
+                            <div class="trecho-container">
+                                <div class="aspas">"</div>
+                                <p class="trecho">E então ele entendeu: não era sobre encontrar. Era sobre reconhecer.</p>
+                            </div>
+                            <div class="separador"></div>
+                            <div class="comentario-container">
+                                <p class="comentario">Chorei. Simplesmente chorei. E soube que nunca mais seria o mesmo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O Que Isso Me Lembrou -->
+            <div id="lembrancas" class="pagina lembrancas" style="display: none;">
+                <h2>O QUE ISSO ME LEMBROU</h2>
+                <p class="subtitulo-pagina">Reflexões que nasceram entre as linhas</p>
+                
+                <div class="reflexoes-container">
+                    <div class="reflexao-card">
+                        <div class="decoracao-superior"></div>
+                        <h3>SOBRE O AMOR</h3>
+                        <p>O amor não é um destino a ser alcançado, mas um caminho a ser percorrido com os olhos bem abertos — e às vezes fechados, para sentir melhor.</p>
+                        <div class="decoracao-inferior"></div>
+                    </div>
+                    <div class="reflexao-card">
+                        <div class="decoracao-superior"></div>
+                        <h3>SOBRE O TEMPO</h3>
+                        <p>Algumas coisas precisam do tempo certo para fazer sentido. Como esta leitura, que chegou quando eu estava pronto para ouvir.</p>
+                        <div class="decoracao-inferior"></div>
+                    </div>
+                    <div class="reflexao-card">
+                        <div class="decoracao-superior"></div>
+                        <h3>SOBRE AS PESSOAS</h3>
+                        <p>As pessoas que nos marcam são aquelas que nos entregam pedaços de si em forma de recomendações, músicas, livros, silêncios compartilhados.</p>
+                        <div class="decoracao-inferior"></div>
+                    </div>
+                    <div class="reflexao-card">
+                        <div class="decoracao-superior"></div>
+                        <h3>SOBRE MUDANÇAS</h3>
+                        <p>Um livro não nos muda. Apenas aponta para onde a mudança já estava acontecendo, discretamente, dentro da gente.</p>
+                        <div class="decoracao-inferior"></div>
+                    </div>
+                </div>
+                
+                <div class="nota-final">
+                    <p>
+                        Este livro me lembrou que o mais importante nunca é óbvio.<br />
+                        Precisa ser descoberto,<br />
+                        como você descobriu que eu precisava lê-lo,<br />
+                        e como eu descobri o que isso significava.
+                    </p>
+                    <p style="margin-top: 30px; color: var(--laranja-forte); font-weight: 700; font-family: 'Architects Daughter', cursive; font-size: 1.5rem; transform: rotate(-1deg); display: inline-block; padding: 15px 30px; background: rgba(255,255,255,0.9); border: 3px solid var(--fita); box-shadow: 8px 8px 0 rgba(0,0,0,0.2);">
+                        "OUER CHA? UM DIA VOCÊ ACEITA"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detalhes -->
+            <div id="detalhes" class="pagina detalhes" style="display: none;">
+                <h2>DETALHES</h2>
+                <p class="subtitulo-pagina">Pequenas coisas que ficaram</p>
+                
+                <div class="pensamentos-container">
+                    <div class="pensamento">
+                        <span class="marcador">🍊</span>
+                        <p>O laranja forte da capa me perseguiu pelos dias. Ficava vendo laranja em tudo — no pôr do sol, nas frutas do mercado, nas camisetas das pessoas.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">☕</span>
+                        <p>Há marcas de café em algumas páginas. De qual leitura? A minha ou a sua? Misturamos nossas marcas sem saber.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">📖</span>
+                        <p>As páginas 89 a 93 estão levemente dobradas. Voltei ali várias vezes. Algo nessa passagem me chamava de volta.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">🔭</span>
+                        <p>A palavra 'binóculos' aparece 7 vezes. Contei. Sete vezes para lembrar de olhar mais de perto o que estava longe de mim.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">👃</span>
+                        <p>O livro cheira a novo, mas as ideias cheiram a antigo — no bom sentido. Como encontrar uma foto esquecida e reconhecer nela alguém que você ama.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">🎫</span>
+                        <p>Deixei cair entre as páginas: um ticket de metrô, um papel de bala, um verso solto. Acidentes que viraram marcos.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">✏️</span>
+                        <p>Algumas anotações estão com caneta azul, outras com preta. Dependia do dia, do humor, do que eu tinha à mão na hora da epifania.</p>
+                    </div>
+                    <div class="pensamento">
+                        <span class="marcador">💧</span>
+                        <p>A última página tem uma mancha. Talvez lágrima, talvez chuva, talvez café. Talvez os três. Talvez tudo que molha e marca.</p>
+                    </div>
+                </div>
+                
+                <div class="poemas-container">
+                    <div class="poema-card">
+                        <h4>SOBRE A LEITURA</h4>
+                        <p class="poema-texto">Virar páginas / é como virar esquinas / cada uma revela / um novo pedaço de céu / ou de si mesmo.</p>
+                    </div>
+                    <div class="poema-card">
+                        <h4>SOBRE O LARANJA</h4>
+                        <p class="poema-texto">Laranja forte / cor que não se esconde / como certas pessoas / que entram na vida / e recusam-se a ser pálidas.</p>
+                    </div>
+                </div>
+                
+                <div class="observacao-final">
+                    <p>
+                        Os detalhes são o que fica depois que a história termina.<br />
+                        São as pegadas do que nos tocou, as marcas do que importou.
+                    </p>
+                    <p style="margin-top: 25px; font-family: 'Architects Daughter', cursive; letter-spacing: 2px; font-size: 1.3rem; color: var(--laranja-forte); background: rgba(255,255,255,0.9); padding: 15px; border: 2px solid var(--fita); display: inline-block; transform: rotate(1deg); box-shadow: 5px 5px 0 rgba(0,0,0,0.2);">
+                        • ALIENS • BINÓCULOS • LARANJA FORTE • SÃO PATRIQUE • 👽🔭🍊 •
+                    </p>
+                </div>
+            </div>
+
+            <!-- Edição Especial -->
+            <div id="edicao-especial" class="pagina edicao-especial" style="display: none;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2>EDIÇÃO ESPECIAL</h2>
+                    <p class="subtitulo" style="font-size: 1.5rem;">A imagem que captura o sentimento</p>
+                </div>
+                
+                <div class="container-edicao">
+                    <div class="papel-foto">
+                        <div class="selo-especial">LIMITADA</div>
+                        
+                        <div class="moldura-imagem">
+                            <div class="imagem-container">
+                                <div class="imagem-placeholder">
+                                    <div style="font-size: 4rem; margin-bottom: 20px;">🖼️</div>
+                                    <h3 style="font-family: 'Architects Daughter', cursive; color: var(--laranja-forte); margin-bottom: 20px; font-size: 2rem;">
+                                        ChatGPT Image - 6 de janeiro de 2026
+                                    </h3>
+                                    
+                                    <div class="texto-imagem">
+                                        <h4 style="font-family: 'Space Mono', monospace; margin-bottom: 15px; font-size: 1.4rem; color: var(--caneta-preta);">
+                                            Easta a beija<br />
+                                            Cig Sags de: Mercury!<br />
+                                            Sushi: 0x20.5, food!<br />
+                                            Flies: 500%<br />
+                                            Vacant: 100%!<br />
+                                            Sagido:<br />
+                                            Loca: 1, fron.<br />
+                                            Camor em...<br />
+                                            (Cona...
+                                        </h4>
+                                        <p style="font-family: 'Crimson Text', serif; font-style: italic; color: var(--caneta-azul);">
+                                            Uma imagem que captura a essência da leitura:<br />
+                                            fragmentos, memórias, códigos pessoais.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="legenda-foto">
+                                <p><strong>Descrição:</strong> Esta imagem representa os fragmentos que ficaram da leitura — 
+                                como pedaços de papel colados em um diário secreto, cada um com seu código pessoal, 
+                                sua linguagem íntima, sua verdade que só faz sentido para quem esteve lá.</p>
+                                <p style="margin-top: 10px;"><strong>Data de captura:</strong> 6 de janeiro de 2026, 09:42:56</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conteudo-edicao">
+                        <div class="elemento-edicao">
+                            <h3>SOBRE ESTA IMAGEM</h3>
+                            <p>Esta não é apenas uma imagem. É um mapa de códigos pessoais, um registro do momento exato em que a leitura se tornou algo mais que palavras em páginas.</p>
+                            <p>Os fragmentos de texto — "Easta a beija", "Cig Sags de: Mercury!", "Sushi: 0x20.5, food!" — são como anotações de margem que só fazem sentido para quem estava lá, naquele exato momento de descoberta.</p>
+                        </div>
+                        
+                        <div class="elemento-edicao">
+                            <h3>POR QUE É ESPECIAL</h3>
+                            <p>Esta edição especial captura a essência do que significa ler com o coração aberto: é sobre transformar palavras em códigos pessoais, em memórias viscerais, em mapas emocionais.</p>
+                            <p>Como a leitura do livro, esta imagem não é óbvia. Precisa ser decifrada, sentida, vivida. Cada fragmento é uma porta para uma memória, cada código é uma chave para um sentimento.</p>
+                        </div>
+                        
+                        <div class="elemento-edicao">
+                            <h3>O QUE REPRESENTA</h3>
+                            <p>A imagem é um testemunho do processo de colagem emocional que esta leitura se tornou. Fragmentos aparentemente desconexos que, juntos, formam um todo coerente — assim como os momentos marcados nas páginas do livro.</p>
+                            <p>É a prova visual de que algumas experiências de leitura transcendem o texto e se tornam parte de quem somos.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <div class="nota-final" style="max-width: 800px; margin: 0 auto;">
+                            <p>
+                                Esta Edição Especial é dedicada a todos os fragmentos que ficam depois que fechamos um livro:<br />
+                                as imagens mentais, as frases riscadas, os códigos pessoais,<br />
+                                os pedaços de nós que ficam colados nas páginas.
+                            </p>
+                            <p style="margin-top: 20px; font-family: 'Architects Daughter', cursive; font-size: 1.4rem; color: var(--laranja-forte);">
+                                <span style="background: rgba(255,255,255,0.9); padding: 10px 20px; display: inline-block; transform: rotate(-1deg); border: 2px solid var(--fita); box-shadow: 5px 5px 0 rgba(0,0,0,0.2);">
+                                    🖼️•EASTA A BEIJA•CIG SAGS•MERCURY•SUSHI 0x20.5•FLIES 500%•VACANT 100%•SAGIDO•LOCA 1 FRON•CAMOR EM...•CONA...•👽🍊🔭
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Para Você -->
+            <div id="voce" class="pagina voce" style="display: none;">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="letter">
+                        <div class="letter-content">
+                            <h2>PARA VOCÊ</h2>
+                            
+                            <div class="dedicatoria">
+                                <p>
+                                    Você não está nomeado em nenhuma página,<br />
+                                    mas está presente em cada uma delas.
+                                </p>
+                                
+                                <p>
+                                    Este espaço — estas palavras, estas anotações,<br />
+                                    estas reflexões — existe porque você disse:<br />
+                                    "Leia isso. Vai significar algo para você."
+                                </p>
+                                
+                                <p>
+                                    E significou.<br />
+                                    Mais do que palavras podem dizer.
+                                </p>
+                                
+                                <div class="assinatura">
+                                    <p>Com o livro fechado,<br />mas o coração aberto.</p>
+                                    <div class="linha-assinatura"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nota-final">
+                    <p>
+                        Obrigado por esta leitura,<br />
+                        por esta descoberta,<br />
+                        por este laranja forte<br />
+                        que agora habita em mim.
+                    </p>
+                    <p class="ultima-linha">
+                        O amor realmente não é óbvio.<br />
+                        Mas algumas pessoas são.
+                    </p>
+                    <p style="margin-top: 30px; font-family: 'Architects Daughter', cursive; font-size: 1.3rem; color: var(--caneta-preta); background: rgba(255,255,255,0.9); padding: 20px; border-radius: 5px; border: 3px solid var(--fita); display: inline-block; transform: rotate(-1deg); box-shadow: 8px 8px 0 rgba(0,0,0,0.2);">
+                        TCHAU, ALIEN • BRASIL • SÃO PATRIQUE • 2024
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="rodape">
+            <p style="font-size: 1.4rem; margin-bottom: 30px; font-family: 'Architects Daughter', cursive;">
+                Um caderno de colagem sobre o livro <em>"O Amor Não É Óbvio"</em>
+            </p>
+            <p style="font-size: 1.2rem; color: var(--caneta-vermelha); font-style: italic; margin-bottom: 30px;">
+                Recortado, colado e remendado com sentimentos
+            </p>
+            <div class="marcadores">
+                <span onclick="criarConfete(this)">🍊</span>
+                <span onclick="criarConfete(this)">👽</span>
+                <span onclick="criarConfete(this)">🔭</span>
+                <span onclick="criarConfete(this)">📘</span>
+                <span onclick="criarConfete(this)">💭</span>
+                <span onclick="criarConfete(this)">🖼️</span>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.1rem; font-family: 'Architects Daughter', cursive; color: var(--laranja-forte); letter-spacing: 3px; text-transform: uppercase;">
+                "NÃO É ÓBVIO" • LARANJA ULTRA FORTE • UMA COLAGEM DE SENTIMENTOS
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let momentoAberto = null;
+
+        function mudarPagina(pagina) {
+            // Efeito de colagem ao trocar página
+            document.querySelector('.content').classList.add('colagem-click');
+            setTimeout(() => {
+                document.querySelector('.content').classList.remove('colagem-click');
+            }, 500);
+            
+            // Esconder todas as páginas
+            document.querySelectorAll('.pagina').forEach(p => {
+                p.style.display = 'none';
+            });
+            
+            // Mostrar a página selecionada
+            document.getElementById(pagina).style.display = 'block';
+            
+            // Atualizar navegação ativa
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Encontrar o botão correto
+            document.querySelectorAll('.menu-item').forEach(item => {
+                if (item.getAttribute('onclick') === `mudarPagina('${pagina}')`) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Fechar momentos abertos
+            if (momentoAberto) {
+                toggleMomento(momentoAberto);
+            }
+            
+            // Criar efeito de recorte de papel
+            criarEfeitoRecorte();
+        }
+
+        function criarEfeitoRecorte() {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const recorte = document.createElement('div');
+                    recorte.style.position = 'fixed';
+                    recorte.style.width = '100px';
+                    recorte.style.height = '100px';
+                    recorte.style.background = 'var(--papel-colado)';
+                    recorte.style.border = '2px solid var(--laranja-rasgado)';
+                    recorte.style.opacity = '0.7';
+                    recorte.style.zIndex = '9999';
+                    recorte.style.pointerEvents = 'none';
+                    recorte.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    recorte.style.left = Math.random() * window.innerWidth + 'px';
+                    recorte.style.top = Math.random() * window.innerHeight + 'px';
+                    recorte.style.boxShadow = '5px 5px 15px rgba(0,0,0,0.3)';
+                    document.body.appendChild(recorte);
+                    
+                    recorte.animate([
+                        { transform: `rotate(${Math.random() * 360}deg) scale(1)`, opacity: 0.7 },
+                        { transform: `rotate(${Math.random() * 720}deg) scale(0.5)`, opacity: 0 }
+                    ], {
+                        duration: 1000,
+                        easing: 'ease-out'
+                    }).onfinish = () => recorte.remove();
+                }, i * 100);
+            }
+        }
+
+        function toggleMomento(id) {
+            const momento = document.querySelector(`.momento-card:nth-child(${id})`);
+            const todosMomentos = document.querySelectorAll('.momento-card');
+            
+            // Efeito de colagem
+            momento.classList.add('colagem-click');
+            setTimeout(() => {
+                momento.classList.remove('colagem-click');
+            }, 500);
+            
+            if (momentoAberto === id) {
+                // Fechar este momento
+                momento.classList.remove('aberto');
+                momentoAberto = null;
+            } else {
+                // Fechar qualquer outro aberto
+                todosMomentos.forEach(m => {
+                    m.classList.remove('aberto');
+                });
+                
+                // Abrir este momento
+                momento.classList.add('aberto');
+                momentoAberto = id;
+                
+                // Rolagem suave para o momento aberto
+                setTimeout(() => {
+                    momento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+        }
+
+        // Efeito de digitação no título
+        function typeWriterEffect() {
+            const title = document.querySelector('.logo h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeChar() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeChar, 100);
+                }
+            }
+            
+            setTimeout(typeChar, 1000);
+        }
+
+        // Criar confete ao clicar nos ícones do rodapé
+        function criarConfete(elemento) {
+            const rect = elemento.getBoundingClientRect();
+            const colors = ['var(--laranja-forte)', 'var(--fita)', 'var(--caneta-azul)', 'var(--caneta-vermelha)', 'var(--laranja-rasgado)'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const confete = document.createElement('div');
+                    confete.style.position = 'fixed';
+                    confete.style.width = '20px';
+                    confete.style.height = '20px';
+                    confete.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confete.style.borderRadius = '50%';
+                    confete.style.left = (rect.left + rect.width/2) + 'px';
+                    confete.style.top = (rect.top + rect.height/2) + 'px';
+                    confete.style.pointerEvents = 'none';
+                    confete.style.zIndex = '9999';
+                    confete.style.boxShadow = '0 0 10px currentColor';
+                    document.body.appendChild(confete);
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 100 + Math.random() * 200;
+                    const x = Math.cos(angle) * distance;
+                    const y = Math.sin(angle) * distance;
+                    
+                    confete.animate([
+                        { 
+                            transform: 'translate(0, 0) rotate(0deg) scale(1)', 
+                            opacity: 1 
+                        },
+                        { 
+                            transform: `translate(${x}px, ${y}px) rotate(${Math.random() * 720}deg) scale(0)`, 
+                            opacity: 0 
+                        }
+                    ], {
+                        duration: 1000 + Math.random() * 500,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    }).onfinish = () => confete.remove();
+                }, i * 50);
+            }
+            
+            // Efeito de clique no elemento
+            elemento.style.transform = 'scale(1.5)';
+            setTimeout(() => {
+                elemento.style.transform = '';
+            }, 300);
+        }
+
+        // Efeito de partículas de colagem
+        document.addEventListener('DOMContentLoaded', function() {
+            const colors = ['var(--laranja-forte)', 'var(--fita)', 'var(--caneta-azul)', 'var(--caneta-vermelha)', 'var(--laranja-rasgado)', 'var(--papel-colado)'];
+            
+            function createColagemParticle() {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                const size = Math.random() * 40 + 10;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.top = '-50px';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '-1';
+                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                particle.style.border = '2px solid var(--caneta-preta)';
+                particle.style.transform = `rotate(${Math.random() * 360}deg)`;
+                particle.style.boxShadow = '5px 5px 15px rgba(0,0,0,0.2)';
+                document.body.appendChild(particle);
+                
+                // Forma irregular (simulando recorte)
+                particle.style.clipPath = `polygon(${Math.random() * 50}% ${Math.random() * 50}%, ${Math.random() * 50 + 50}% ${Math.random() * 50}%, ${Math.random() * 50 + 50}% ${Math.random() * 50 + 50}%, ${Math.random() * 50}% ${Math.random() * 50 + 50}%)`;
+                
+                const animation = particle.animate([
+                    { 
+                        transform: `rotate(${Math.random() * 360}deg) translateY(0)`, 
+                        opacity: particle.style.opacity 
+                    },
+                    { 
+                        transform: `rotate(${Math.random() * 720}deg) translateY(${window.innerHeight + 100}px)`, 
+                        opacity: 0 
+                    }
+                ], {
+                    duration: Math.random() * 5000 + 3000,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                });
+                
+                animation.onfinish = () => particle.remove();
+            }
+            
+            // Criar algumas partículas iniciais
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createColagemParticle, i * 300);
+            }
+            
+            // Continuar criando partículas
+            setInterval(createColagemParticle, 2000);
+        });
+
+        // Inicializar a página Início
+        window.onload = function() {
+            mudarPagina('inicio');
+            typeWriterEffect();
+            
+            // Adicionar efeito de colagem nos botões
+            document.querySelectorAll('.menu-item').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Efeito visual
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                    
+                    // Criar efeito de recorte
+                    const recorte = document.createElement('div');
+                    recorte.style.position = 'fixed';
+                    recorte.style.width = '150px';
+                    recorte.style.height = '150px';
+                    recorte.style.background = 'var(--papel-colado)';
+                    recorte.style.border = '3px solid var(--laranja-rasgado)';
+                    recorte.style.opacity = '0.8';
+                    recorte.style.zIndex = '9999';
+                    recorte.style.pointerEvents = 'none';
+                    recorte.style.left = e.clientX + 'px';
+                    recorte.style.top = e.clientY + 'px';
+                    recorte.style.transform = 'translate(-50%, -50%) rotate(45deg)';
+                    recorte.style.boxShadow = '10px 10px 20px rgba(0,0,0,0.3)';
+                    document.body.appendChild(recorte);
+                    
+                    recorte.animate([
+                        { 
+                            transform: 'translate(-50%, -50%) rotate(45deg) scale(1)', 
+                            opacity: 0.8 
+                        },
+                        { 
+                            transform: 'translate(-50%, -50%) rotate(405deg) scale(0)', 
+                            opacity: 0 
+                        }
+                    ], {
+                        duration: 800,
+                        easing: 'ease-out'
+                    }).onfinish = () => recorte.remove();
+                });
+            });
+        };
+    </script>
+</body>
+</html>
