@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>O Amor Não É Óbvio - Uma Leitura Comentada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2029,6 +2030,609 @@
             50% { transform: scale(0.95); }
             100% { transform: scale(1); }
         }
+        /* ADICIONE ESTAS REGRAS AO SEU CSS EXISTENTE */
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    #root {
+        max-width: 95%;
+    }
+    
+    .content {
+        margin: 0 10px 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .momento-conteudo {
+        flex-direction: column;
+    }
+    
+    .separador {
+        width: 100%;
+        height: 5px;
+        margin: 30px 0;
+    }
+    
+    .envelope {
+        width: 350px;
+        height: 250px;
+    }
+
+    .imagem-placeholder {
+        height: 400px;
+    }
+    
+    .papel-diario {
+        flex-direction: column;
+    }
+    
+    .margem-papel {
+        width: 100%;
+        height: 60px;
+        border-right: none;
+        border-bottom: 3px solid var(--caneta-preta);
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px;
+    }
+    
+    .margem-papel::before {
+        background: 
+            radial-gradient(circle at 50px 30px, var(--cola) 3px, transparent 4px),
+            radial-gradient(circle at 150px 30px, var(--cola) 3px, transparent 4px),
+            radial-gradient(circle at 250px 30px, var(--cola) 3px, transparent 4px),
+            radial-gradient(circle at 350px 30px, var(--cola) 3px, transparent 4px),
+            radial-gradient(circle at 450px 30px, var(--cola) 3px, transparent 4px);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    
+    #root {
+        transform: rotate(0.2deg);
+    }
+    
+    .pagina {
+        padding: 20px;
+    }
+    
+    /* Navegação Mobile */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .menu-item {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        --rotation: 0deg !important;
+        transform: rotate(0deg);
+    }
+    
+    .menu-item:hover {
+        transform: scale(1.05) translateY(-3px);
+    }
+    
+    .menu-item.active {
+        transform: rotate(0deg);
+    }
+    
+    /* Logo Mobile */
+    .logo {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .logo-icon {
+        font-size: 3rem;
+    }
+    
+    .logo h1 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo h1::before,
+    .logo h1::after {
+        display: none;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+        padding: 6px 15px;
+    }
+    
+    /* Conteúdo Principal */
+    .content {
+        border-width: 3px;
+        transform: rotate(0.1deg);
+    }
+    
+    /* Página Início */
+    .frase-principal {
+        padding: 25px;
+        margin-bottom: 40px;
+    }
+    
+    .frase-principal h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .frase-principal h2 span {
+        padding: 3px 10px;
+        margin: 2px;
+        display: inline-block;
+    }
+    
+    .frase-principal .subtitulo {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+    
+    .texto-poetico {
+        padding: 25px;
+        font-size: 1.1rem;
+        margin: 40px auto;
+    }
+    
+    .texto-poetico p {
+        padding-left: 20px;
+    }
+    
+    .marcador-livro {
+        padding: 20px;
+        margin-top: 40px;
+    }
+    
+    /* Página Leitura */
+    .papel-diario {
+        margin: 0;
+    }
+    
+    .conteudo-papel {
+        padding: 25px;
+    }
+    
+    .citacoes-container {
+        padding: 20px;
+        margin-top: 40px;
+    }
+    
+    .citacao-card {
+        padding: 20px;
+    }
+    
+    .trecho-livro {
+        font-size: 1.2rem;
+        padding-left: 25px;
+    }
+    
+    .comentario-pessoal {
+        padding: 15px;
+    }
+    
+    /* Páginas Marcadas */
+    .marcadas h2 {
+        font-size: 2.2rem;
+        padding: 15px;
+    }
+    
+    .momentos-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .momento-card {
+        padding: 20px;
+        transform: rotate(0deg) !important;
+    }
+    
+    .momento-card:hover {
+        transform: scale(1.02) translateY(-5px) !important;
+    }
+    
+    .momento-cabecalho {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .marcador-livro-pequeno {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .trecho {
+        font-size: 1.3rem;
+    }
+    
+    /* Reflexões */
+    .lembrancas h2 {
+        font-size: 2.2rem;
+    }
+    
+    .reflexoes-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .reflexao-card {
+        padding: 25px;
+        transform: rotate(0deg) !important;
+    }
+    
+    .reflexao-card:hover {
+        transform: scale(1.02) rotate(0deg) !important;
+    }
+    
+    /* Detalhes */
+    .detalhes h2 {
+        font-size: 2.2rem;
+    }
+    
+    .pensamentos-container {
+        padding: 25px;
+        margin: 30px auto;
+    }
+    
+    .pensamento {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .marcador {
+        font-size: 1.8rem;
+    }
+    
+    .poemas-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 40px auto;
+    }
+    
+    .poema-card {
+        padding: 25px;
+    }
+    
+    .poema-texto {
+        font-size: 1.1rem;
+    }
+    
+    /* Edição Especial */
+    .edicao-especial h2 {
+        font-size: 2rem;
+        padding: 15px 30px;
+    }
+    
+    .papel-foto {
+        padding: 20px;
+    }
+    
+    .imagem-placeholder {
+        height: 300px;
+        padding: 20px;
+    }
+    
+    .texto-imagem {
+        padding: 15px;
+    }
+    
+    .conteudo-edicao {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .elemento-edicao {
+        padding: 20px;
+    }
+    
+    /* Para Você */
+    .envelope {
+        width: 300px;
+        height: 200px;
+    }
+    
+    .flap {
+        width: 300px;
+        height: 180px;
+    }
+    
+    .letter {
+        padding: 40px 30px;
+    }
+    
+    .letter-content h2 {
+        font-size: 2rem;
+    }
+    
+    .dedicatoria p {
+        font-size: 1.1rem;
+    }
+    
+    .ultima-linha {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+    
+    /* Rodapé */
+    .rodape {
+        padding: 40px 20px;
+    }
+    
+    .marcadores {
+        gap: 15px;
+    }
+    
+    .marcadores span {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Elementos muito pequenos */
+    .menu-item {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+    
+    .frase-principal h2 {
+        font-size: 1.6rem;
+    }
+    
+    .frase-principal h2 span {
+        padding: 2px 8px;
+    }
+    
+    .texto-poetico {
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .marcador-livro {
+        padding: 15px;
+    }
+    
+    .citacao-card {
+        padding: 15px;
+    }
+    
+    .trecho-livro {
+        font-size: 1.1rem;
+    }
+    
+    .momento-card {
+        padding: 15px;
+    }
+    
+    .trecho {
+        font-size: 1.1rem;
+    }
+    
+    .separador {
+        margin: 20px 0;
+    }
+    
+    .envelope {
+        width: 280px;
+        height: 180px;
+    }
+    
+    .flap {
+        width: 280px;
+        height: 160px;
+        top: -60px;
+    }
+    
+    .letter {
+        padding: 30px 20px;
+        height: 180px;
+    }
+    
+    .letter-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .dedicatoria p {
+        font-size: 1rem;
+        padding-left: 15px;
+    }
+    
+    .imagem-placeholder {
+        height: 250px;
+        padding: 15px;
+    }
+    
+    .imagem-placeholder h3 {
+        font-size: 1.5rem;
+    }
+    
+    .texto-imagem p {
+        font-size: 0.9rem;
+    }
+    
+    .papel-foto::before,
+    .papel-foto::after {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .selo-especial {
+        padding: 10px;
+        font-size: 1rem;
+    }
+    
+    .marcadores span {
+        font-size: 1.8rem;
+    }
+    
+    /* Ocultar alguns elementos de colagem em mobile */
+    .colagem-elemento:nth-child(n+5) {
+        display: none;
+    }
+    
+    .pedaco-papel {
+        display: none;
+    }
+    
+    .mancha-cola {
+        opacity: 0.05;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .frase-principal h2 {
+        font-size: 1.4rem;
+    }
+    
+    .envelope {
+        width: 260px;
+        height: 160px;
+    }
+    
+    .flap {
+        width: 260px;
+        height: 140px;
+        top: -50px;
+    }
+    
+    .letter {
+        padding: 25px 15px;
+        height: 160px;
+    }
+    
+    .letter-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .imagem-placeholder {
+        height: 200px;
+    }
+}
+
+/* Correções para toques em dispositivos móveis */
+@media (hover: none) and (pointer: coarse) {
+    /* Remover hover effects que não funcionam bem em touch */
+    .menu-item:hover {
+        transform: none;
+        box-shadow: 5px 5px 0 rgba(0,0,0,0.2);
+    }
+    
+    .menu-item.active:hover {
+        transform: none;
+    }
+    
+    .citacao-card:hover,
+    .reflexao-card:hover,
+    .momento-card:hover,
+    .poema-card:hover,
+    .pensamento:hover,
+    .elemento-edicao:hover {
+        transform: none !important;
+        box-shadow: inherit;
+    }
+    
+    /* Aumentar área de toque */
+    .menu-item,
+    .momento-card,
+    .citacao-card,
+    .marcadores span {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Adicionar feedback visual para toque */
+    .menu-item:active,
+    .momento-card:active,
+    .citacao-card:active {
+        transform: scale(0.98) !important;
+        transition: transform 0.1s;
+    }
+}
+
+/* Prevenir zoom em inputs em iOS */
+@media screen and (max-width: 768px) {
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Melhorar legibilidade em mobile */
+@media (max-width: 768px) {
+    body {
+        line-height: 1.5;
+    }
+    
+    p {
+        margin-bottom: 1.2em;
+    }
+    
+    h1, h2, h3, h4 {
+        line-height: 1.2;
+    }
+}
+
+/* Correção para elementos fixos em mobile */
+@media (max-width: 768px) {
+    .mancha-cola-1,
+    .mancha-cola-2,
+    .mancha-cola-3 {
+        display: none;
+    }
+}
+
+/* Ajustar animações para performance mobile */
+@media (max-width: 768px) {
+    .colagem-elemento {
+        animation-duration: 30s;
+        opacity: 0.1;
+    }
+    
+    @keyframes colagem-flutuar {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        25% { transform: translate(20px, 30px) rotate(5deg) scale(1.05); }
+        50% { transform: translate(0, 60px) rotate(0deg) scale(1); }
+        75% { transform: translate(-20px, 30px) rotate(-5deg) scale(0.95); }
+        100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    }
+}
+
+/* Garantir que imagens sejam responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Melhorar rolagem em mobile */
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .content {
+        -webkit-overflow-scrolling: touch;
+    }
+}
     </style>
 </head>
 <body>
@@ -2891,7 +3495,53 @@
                 });
             });
         };
+        // ADICIONE ESTAS FUNÇÕES AO SEU JAVASCRIPT
+
+// Detectar se é mobile
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Otimizar para touch
+if (isMobile()) {
+    // Remover alguns efeitos pesados
+    document.querySelectorAll('.colagem-elemento').forEach(el => {
+        el.style.animation = 'none';
+    });
+    
+    // Ajustar comportamento dos menus
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        item.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+    });
+}
+
+// Prevenir zoom duplo
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
+
+// Melhorar performance em mobile
+window.addEventListener('load', function() {
+    if (isMobile()) {
+        // Desativar algumas animações pesadas
+        document.querySelectorAll('.pedaco-papel').forEach(el => {
+            el.style.display = 'none';
+        });
+    }
+});
     </script>
 </body>
 
 </html>
+
